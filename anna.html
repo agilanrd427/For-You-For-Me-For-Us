@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be Mine? 💌</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      padding: 40px;
+      color: #d63384;
+    }
+
+    .bear {
+      font-size: 70px;
+    }
+
+    .question-box {
+      background: #ffe6f0;
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      max-width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .question {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .yes-btn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .no-btn {
+      background-color: #ffd1dc;
+      color: #d63384;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .final-message {
+      font-size: 26px;
+      margin-top: 40px;
+      display: none;
+      color: #ff1493;
+    }
+
+    .hearts {
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bear">ʕ•ᴥ•ʔ</div>
+  <div class="question-box">
+    <div id="question" class="question">Will you be my special someone? 💞</div>
+    <div class="buttons">
+      <button class="yes-btn" onclick="handleYes()">Yes 💖</button>
+      <button class="no-btn" onclick="handleNo()">No 🙈</button>
+    </div>
+  </div>
+
+  <div id="finalMessage" class="final-message">
+    <div class="hearts">💘💘💘</div>
+    Yay! You just made someone the happiest person alive! 🥰💍<br>
+    Let’s make beautiful memories together! 🌸
+    <div class="hearts">💘💘💘</div>
+  </div>
+
+  <script>
+    const questions = [
+      "Are you sure? 🥺",
+      "Really? Still yes? 😳",
+      "Like, for real for real?? 😍",
+      "No backsies? 👀",
+      "So… is that a YES-yes?? 💘"
+    ];
+
+    let index = 0;
+
+    function handleYes() {
+      if (index < questions.length) {
+        document.getElementById('question').innerText = questions[index];
+        index++;
+      } else {
+        document.querySelector('.question-box').style.display = "none";
+        document.getElementById('finalMessage').style.display = "block";
+      }
+    }
+
+    function handleNo() {
+      alert("Oops! That’s illegal 😤 Try again! 💔");
+    }
+  </script>
+
+</body>
+</html>
